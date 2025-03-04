@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "URL Redirector",
+  "version": "1.0",
+  "description": "Redirects to a predefined URL",
+  "permissions": ["activeTab",
+    "tabs",
+    "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "Custom/icon128-16x16.png",
+      "48": "Custom/icon128-48x48.png",
+      "128": "Custom/icon128-128x128.png"
+    }
+  },
+  "icons": {
+    "16": "Custom/icon128-16x16.png",
+    "48": "Custom/icon128-48x48.png",
+    "128": "Custom/icon128-128x128.png"
+  }
+}
