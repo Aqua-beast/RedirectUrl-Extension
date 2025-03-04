@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Redirector</title>
+  <style>
+    body {
+      width: 400px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .main-container {
+      display: none;
+    }
+    .container,
+    .redirect-links {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    .container h3,
+    .redirect-links h3 {
+      margin-bottom: 5px;
+    }
+    .url-input {
+      width: 50%;
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+    .submit-btn,
+    .close-btn,
+    .redirectSubmit-btn {
+      padding: 5px 10px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .redirect-btn,
+    .home-btn,
+    .changeUrl-btn,
+    .reset-btn {
+      display: block;
+      width: 50%;
+      padding: 8px;
+      margin-top: 10px;
+      background-color: #007bff; /* Default color */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .redirect-btn:hover,
+    .home-btn:hover,
+    .changeUrl-btn:hover,
+    .reset-btn:hover,
+    .redirectSubmit-btn:hover {
+      background-color: #0056b3;
+    }
+    /* Custom color options */
+    .color-options-container {
+      margin-top: 10px;
+    }
+    .color-option {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid transparent; /* Default border style */
+    }
+    .color-option.active {
+      border-color: black; /* Border color for active option */
+    }
+    /* Redirect links section */
+    .redirect-links {
+      margin-top: 20px;
+    }
+    .redirect-link {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .link-label {
+      width: 20px;
+      text-align: center;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+<body>
+  <h2>URL Redirector</h2>
+
+  <!-- Logo -->
+   <div class="logo-container">
+    <img src="./Custom/icon128-48x48.png" alt="logo for the extension">
+   </div>
+
+  <!-- Color selection options -->
+  <div class="color-options-container">
+    <div class="color-option" style="background-color: #007bff" data-color="#007bff"></div>
+    <div class="color-option" style="background-color: #28a745" data-color="#28a745"></div>
+    <div class="color-option" style="background-color: #dc3545" data-color="#dc3545"></div>
+    <div class="color-option" style="background-color: #ffc107" data-color="#ffc107"></div>
+  </div>
+
+  <div class="main-container">
+    <!-- Redirect Links Section -->
+    <div class="redirect-links">
+      <h3>Redirect Links</h3>
+      <div class="redirect-link">
+        <span class="link-label">1</span>
+        <input class="url-input" type="text" placeholder="Label" id="redirectLabel1" />
+        <input class="url-input" type="url" placeholder="URL" id="redirectURL1" />
+        <button class="redirectSubmit-btn" id="submitRedirect1">Submit</button>
+      </div>
+      <div class="redirect-link">
+        <span class="link-label">2</span>
+        <input class="url-input" type="text" placeholder="Label" id="redirectLabel2" />
+        <input class="url-input" type="url" placeholder="URL" id="redirectURL2" />
+        <button class="redirectSubmit-btn" id="submitRedirect2">Submit</button>
+      </div>
+      <div class="redirect-link">
+        <span class="link-label">3</span>
+        <input class="url-input" type="text" placeholder="Label" id="redirectLabel3" />
+        <input class="url-input" type="url" placeholder="URL" id="redirectURL3" />
+        <button class="redirectSubmit-btn" id="submitRedirect3">Submit</button>
+      </div>
+      <div class="redirect-link">
+        <span class="link-label">4</span>
+        <input class="url-input" type="text" placeholder="Label" id="redirectLabel4" />
+        <input class="url-input" type="url" placeholder="URL" id="redirectURL4" />
+        <button class="redirectSubmit-btn" id="submitRedirect4">Submit</button>
+      </div>
+    </div>
+
+    <!-- Home URL container -->
+    <div class="container" id="homeContainer">
+      <h3>Home Page URL</h3>
+      <input class="url-input" id="homeUrlInput" type="text" placeholder="Enter new URL" required />
+      <button class="submit-btn" id="submitHome">Submit</button>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <button class="redirect-btn" id="redirectButton1">Redirect Link 1</button>
+  <button class="redirect-btn" id="redirectButton2">Redirect Link 2</button>
+  <button class="redirect-btn" id="redirectButton3">Redirect Link 3</button>
+  <button class="redirect-btn" id="redirectButton4">Redirect Link 4</button>
+  <button class="home-btn" id="homePage">Home</button>
+  <button class="changeUrl-btn" id="changeUrlButton">Change URLs</button>
+  <button class="reset-btn" id="resetSettings">Reset Settings</button>
+</body>
+</html>
